@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 11/11/2018
- * Time: 23:06
- */
 
 namespace AppBundle\Controller;
 
@@ -36,7 +30,8 @@ class AdminController extends Controller
         ];
 
         return $this->render(
-            '/admin/index.html.twig', [
+            '/admin/index.html.twig',
+            [
                 'params' => $params
             ]
         );
@@ -101,7 +96,7 @@ class AdminController extends Controller
         );
     }
 
-    public function deleteUserAction(Request $request, User $user )
+    public function deleteUserAction(Request $request, User $user)
     {
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($user);
@@ -135,21 +130,20 @@ class AdminController extends Controller
             $role
                 ->addAccess($RWD)
                 ->addAccess($RW)
-                ->addAccess($R)
-            ;
+                ->addAccess($R);
         }
 
-            $form = $this->createForm(RoleType::class, $role);
-            $form->handleRequest($request);
+        $form = $this->createForm(RoleType::class, $role);
+        $form->handleRequest($request);
 
-            if ($form->isSubmitted() && $form->isValid()) {
-                $entityManager = $this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
 
-                $entityManager->persist($role);
-                $entityManager->flush();
+            $entityManager->persist($role);
+            $entityManager->flush();
 
-                return $this->redirectToRoute('app.admin.role.list');
-            }
+            return $this->redirectToRoute('app.admin.role.list');
+        }
         return $this->render(
             'admin/role/construct.html.twig',
             [
@@ -158,7 +152,7 @@ class AdminController extends Controller
         );
     }
 
-    public function deleteRoleAction(Request $request, Role $role )
+    public function deleteRoleAction(Request $request, Role $role)
     {
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($role);

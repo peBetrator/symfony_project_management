@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 10/11/2018
- * Time: 13:49
- */
 
 namespace AppBundle\Form;
 
@@ -34,7 +28,7 @@ class RoleType extends AbstractType
                     new NotNull()
                 ]
             ])
-            ->add('accesses',CollectionType::class,array(
+            ->add('accesses', CollectionType::class, array(
                 'entry_type' => AccessType::class,
                 'entry_options' => [
                     'label' => false
@@ -60,11 +54,10 @@ class RoleType extends AbstractType
                 ],
                 'required' => false,
                 'by_reference' => false,
-                'query_builder' => function(UserRepository $userRepository) {
+                'query_builder' => function (UserRepository $userRepository) {
                     return $userRepository->findAllQB();
                 }
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

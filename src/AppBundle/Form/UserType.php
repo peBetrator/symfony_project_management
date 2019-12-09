@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 10/11/2018
- * Time: 13:49
- */
 
 namespace AppBundle\Form;
 
@@ -72,8 +66,7 @@ class UserType extends AbstractType
                     'class' => 'form-control',
                 ],
                 'required' => false
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

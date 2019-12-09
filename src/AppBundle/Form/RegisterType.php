@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 10/11/2018
- * Time: 13:49
- */
 
 namespace AppBundle\Form;
 
@@ -77,8 +71,7 @@ class RegisterType extends AbstractType
                         ])
                     ]
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

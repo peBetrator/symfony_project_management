@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 12/11/2018
- * Time: 20:34
- */
 
 namespace AppBundle\DataFixtures;
 

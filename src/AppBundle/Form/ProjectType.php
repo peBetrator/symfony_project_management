@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 10/11/2018
- * Time: 13:49
- */
 
 namespace AppBundle\Form;
 
@@ -38,8 +32,7 @@ class ProjectType extends AbstractType
                     'placeholder' => 'Content',
                     'class' => 'form-control'
                 ]
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

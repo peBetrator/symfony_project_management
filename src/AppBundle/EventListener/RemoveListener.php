@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: harmakit
- * Date: 24/11/2018
- * Time: 13:46
- */
 
 namespace AppBundle\EventListener;
 
@@ -24,6 +18,5 @@ class RemoveListener
         if ($entity->getUsername() === 'admin') {
             throw new \Exception('Can\'t delete admin user');
         }
-
     }
 }
